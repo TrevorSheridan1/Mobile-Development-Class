@@ -14,7 +14,7 @@ class NameForm extends React.Component {
       }
 
       handleSubmit(event) {
-        if (/[^A-Za-z]/.test(this.state.value)){
+        if (/[^A-Za-z ]/.test(this.state.value)){
           this.setState({correctname: false});
         } else {
           this.setName(this.state.value);
