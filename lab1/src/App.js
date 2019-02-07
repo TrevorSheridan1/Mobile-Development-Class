@@ -21,7 +21,7 @@ class App extends Component {
       <div>
       {(this.state.storage == '') ?
       <NameForm setName={this.setName} />
-      : <p className="incorrect" style={{color:'green'}}>Greetings {this.state.storage}!</p>}
+      : <p className="incorrect" style={{color:'green'}}>Welcome to the site, {this.state.storage}!</p>}
       </div>
     );
   }
