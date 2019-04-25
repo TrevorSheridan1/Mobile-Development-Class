@@ -25,7 +25,6 @@ class DetailsScreen extends React.Component {
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Toppings Screen</Text>
 
-      <div>
         <RadioGroup>
           <RadioButton value="pepperoni">
             <Text>Pepperoni</Text>
@@ -75,7 +74,7 @@ class DetailsScreen extends React.Component {
             <Text>Extra Cheese</Text>
           </RadioButton>
         </RadioGroup>
-      </div>
+
 
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Button
