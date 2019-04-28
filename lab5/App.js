@@ -64,7 +64,8 @@ class DetailsScreen extends React.Component {
             <Checkbox value="ham"/>
             <Checkbox value="chicken"/>
            <Checkbox value="meatballs"/>
-          </CheckboxGroup>*/}
+          </CheckboxGroup>
+          */}
 
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <TouchableOpacity style={styles.buttonStyle2} onPress={() => this.props.navigation.navigate('Submit')}>
