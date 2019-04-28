@@ -3,19 +3,54 @@ import ReactDOM from 'react-dom';
 import { StyleSheet, TouchableOpacity, Text, View, TextInput, Button } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation'; // Version can be specified in package.json
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
+import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
 
 
 
 
 class HomeScreen extends React.Component {
+  /*
+    constructor(props) {
+    super(props);
+    this.state = {
+      toppings: ['peperoni','sausage','ham','chicken','meatballs']
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        toppings: ['peperoni','sausage','ham','chicken','meatballs']
+      });
+    }, 5000);
+  }
+  */
+
+
+
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Pizza Maker</Text>
-        <Button
-          title="Let's Make A Pizza!"
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
+
+        <Text style={styles.titletext}>Pizza Maker</Text>
+
+        <TouchableOpacity style={styles.buttonStyle} onPress={() => this.props.navigation.navigate('Details')}>
+          <Text style={styles.buttonText}>Let's Make a Pizza!</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.buttonStyle2} onPress={() => this.props.navigation.navigate('Favorites')}>
+          <Text style={styles.buttonText2}>Your Faviortes</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+}
+
+class FavoritesScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text style={styles.titletext2}>Favorites Screen</Text>
       </View>
     );
   }
@@ -25,56 +60,21 @@ class DetailsScreen extends React.Component {
     render() {
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>Toppings Screen</Text>
+          <Text style={styles.titletext2}>Toppings Screen</Text>
 
-          <RadioForm
-              radio_props={radio_props}
-              initial={0}
-              onPress={(value) => {this.setState({value:value})}}
-          />
-
-          <RadioForm
-            radio_props={radio_props}
-            initial={0}
-            onPress={(value) => {this.setState({value:value})}}
-          />
-
-          <RadioForm
-            radio_props={radio_props}
-            initial={0}
-            onPress={(value) => {this.setState({value:value})}}
-          />
-
-          <RadioForm
-            radio_props={radio_props}
-            initial={0}
-            onPress={(value) => {this.setState({value:value})}}
-          />
-
-          <RadioForm
-            radio_props={radio_props}
-            initial={0}
-            onPress={(value) => {this.setState({value:value})}}
-          />
-
-          <RadioForm
-            radio_props={radio_props}
-            initial={0}
-            onPress={(value) => {this.setState({value:value})}}
-          />
-
-          <RadioForm
-            radio_props={radio_props}
-            initial={0}
-            onPress={(value) => {this.setState({value:value})}}
-          />
-
+          {/*
+         <CheckboxGroup name="toppings" value={this.state.toppings} onChange={this.toppingsChanged}>
+            <Checkbox value="pepperoni"/>
+            <Checkbox value="sausage"/>
+            <Checkbox value="ham"/>
+            <Checkbox value="chicken"/>
+           <Checkbox value="meatballs"/>
+          </CheckboxGroup>*/}
 
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Button
-              title="Submit Pizza"
-              onPress={() => this.props.navigation.navigate('Submit')}
-            />
+            <TouchableOpacity style={styles.buttonStyle2} onPress={() => this.props.navigation.navigate('Submit')}>
+              <Text style={styles.buttonText3}>Submit Pizza</Text>
+            </TouchableOpacity>
           </View>
 
           <Button
@@ -120,7 +120,20 @@ const styles = StyleSheet.create({
   buttonText:
   {
     color:'white',
-    fontSize:40
+    fontSize:35,
+    margin:5,
+  },
+  buttonText2:
+  {
+    color:'white',
+    fontSize:25,
+    margin:10,
+  },
+  buttonText3:
+  {
+    color:'white',
+    fontSize:20,
+    margin:15,
   },
   buttonStyle:
   {
@@ -129,6 +142,25 @@ const styles = StyleSheet.create({
     backgroundColor:'red',
     height:75,
     margin:30,
+  },
+  buttonStyle2:
+  {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor:'green',
+    height:55,
+    margin:30,
+  },
+  titletext:
+  {
+    color:'black',
+    fontSize:25,
+  },
+  titletext2:
+  {
+    color:'black',
+    fontSize:25,
+    margin:15,
   },
   button_main:
   {
