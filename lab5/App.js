@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { StyleSheet, TouchableOpacity, Text, View, TextInput, Button } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation'; // Version can be specified in package.json
-import { RadioGroup, RadioButton } from 'react-radio-buttons';
+import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
+
+
 
 
 class HomeScreen extends React.Component {
@@ -20,77 +22,72 @@ class HomeScreen extends React.Component {
 }
 
 class DetailsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Toppings Screen</Text>
-
-        <RadioGroup>
-          <RadioButton value="pepperoni">
-            <Text>Pepperoni</Text>
-          </RadioButton>
-
-          <RadioButton value="sausage">
-            <Text>Sausage</Text>
-          </RadioButton>
-
-          <RadioButton value="ham">
-            <Text>Ham</Text>
-          </RadioButton>
-
-          <RadioButton value="chicken">
-            <Text>Chicken</Text>
-          </RadioButton>
-
-          <RadioButton value="bacon">
-            <Text>Bacon</Text>
-          </RadioButton>
-
-          <RadioButton value="white sauce">
-            <Text>White Sauce</Text>
-          </RadioButton>
-
-          <RadioButton value="red sauce">
-            <Text>Red Sauce</Text>
-          </RadioButton>
-
-          <RadioButton value="onions">
-            <Text>Onions</Text>
-          </RadioButton>
-
-          <RadioButton value="spinach">
-            <Text>Spinach</Text>
-          </RadioButton>
-
-          <RadioButton value="peppers">
-            <Text>Peppers</Text>
-          </RadioButton>
-
-          <RadioButton value="jalapenos">
-            <Text>Jalapenos</Text>
-          </RadioButton>
-
-          <RadioButton value="extra cheese">
-            <Text>Extra Cheese</Text>
-          </RadioButton>
-        </RadioGroup>
-
-
+    render() {
+      return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <Text>Toppings Screen</Text>
+
+          <RadioForm
+              radio_props={radio_props}
+              initial={0}
+              onPress={(value) => {this.setState({value:value})}}
+          />
+
+          <RadioForm
+            radio_props={radio_props}
+            initial={0}
+            onPress={(value) => {this.setState({value:value})}}
+          />
+
+          <RadioForm
+            radio_props={radio_props}
+            initial={0}
+            onPress={(value) => {this.setState({value:value})}}
+          />
+
+          <RadioForm
+            radio_props={radio_props}
+            initial={0}
+            onPress={(value) => {this.setState({value:value})}}
+          />
+
+          <RadioForm
+            radio_props={radio_props}
+            initial={0}
+            onPress={(value) => {this.setState({value:value})}}
+          />
+
+          <RadioForm
+            radio_props={radio_props}
+            initial={0}
+            onPress={(value) => {this.setState({value:value})}}
+          />
+
+          <RadioForm
+            radio_props={radio_props}
+            initial={0}
+            onPress={(value) => {this.setState({value:value})}}
+          />
+
+
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Button
+              title="Submit Pizza"
+              onPress={() => this.props.navigation.navigate('Submit')}
+            />
+          </View>
+
           <Button
-            title="Submit Pizza"
-            onPress={() => this.props.navigation.navigate('Submit')}
+            title="Go back"
+            onPress={() => this.props.navigation.goBack()}
           />
         </View>
-
-        <Button
-          title="Go back"
-          onPress={() => this.props.navigation.goBack()}
-        />
-      </View>
-    );
+      );
+    }
   }
-}
+
+
+
 
 class SubmitScreen extends React.Component {
   render() {
