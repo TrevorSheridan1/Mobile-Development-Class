@@ -5,9 +5,6 @@ import { createAppContainer, createStackNavigator } from 'react-navigation'; // 
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 import {Checkbox, CheckboxGroup} from 'react-checkbox-group';
 
-
-
-
 class HomeScreen extends React.Component {
   /*
     constructor(props) {
@@ -25,8 +22,6 @@ class HomeScreen extends React.Component {
     }, 5000);
   }
   */
-
-
 
   render() {
     return (
@@ -86,9 +81,6 @@ class DetailsScreen extends React.Component {
     }
   }
 
-
-
-
 class SubmitScreen extends React.Component {
   render() {
     return (
@@ -98,7 +90,6 @@ class SubmitScreen extends React.Component {
     );
   }
 }
-
 
 const RootStack = createStackNavigator(
   {
